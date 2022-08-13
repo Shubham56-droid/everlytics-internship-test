@@ -1,2 +1,2 @@
 ## Fetching Data From JSON File Given
-<img src="./img/" alt="test2img"/>
+<img src="./img/Screenshot (833).png" alt="test2img"/>
