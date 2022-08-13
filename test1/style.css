@@ -1,0 +1,184 @@
+/* added global css  */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* given linear gradient bakground with 45 deg rotation of background color */
+body {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    45deg,
+    rgb(255, 15, 115),
+    rgb(108, 255, 238),
+    rgb(93, 0, 255)
+  );
+  overflow: hidden;
+}
+
+/* added a before and after content to the body for making two big bubbles in background */
+body::before {
+  position: absolute;
+  content: "";
+  top: 60%;
+  left: 20%;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  background: linear-gradient(rgb(0, 106, 255), rgb(0, 255, 213));
+  animation: animationUpDowm 5s infinite linear;
+  animation-delay: 2s;
+}
+
+body::after {
+  position: absolute;
+  content: "";
+  top: 0px;
+  left: 60%;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  background: linear-gradient(rgb(255, 22, 146), rgb(253, 158, 204));
+  animation: animationUpDowm 3s infinite linear;
+}
+
+/* these are the smaller bubble with white background color */
+.bubble {
+  position: absolute;
+  top: 40%;
+  left: 70%;
+  height: 150px;
+  width: 150px;
+  background-color: rgba(255, 255, 255, 0.311);
+  border-radius: 50%;
+}
+.bubble::before {
+  position: absolute;
+  content: "";
+  top: 110%;
+  left: -20%;
+  height: 100px;
+  width: 100px;
+  background-color: rgba(255, 255, 255, 0.171);
+  border-radius: 50%;
+}
+
+.bubble::after {
+  position: absolute;
+  content: "";
+  top: -30%;
+  left: -500%;
+  height: 180px;
+  width: 180px;
+  background: rgba(255, 255, 255, 0.171);
+  border-radius: 50%;
+}
+
+/* added styling to form by aliging the div into center */
+.form {
+  position: relative;
+  height: 95%;
+  width: 600px;
+  background: rgba(255, 255, 255, 0.146);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  border: 1px solid #fff;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formElement {
+  position: relative;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formElement label {
+  color: #fff;
+  font-size: 18px;
+  font-family: monospace;
+}
+
+/* i gave class inpdata to all input and select tag in hmtl */
+.inpdata {
+  position: relative;
+  border: none;
+  outline: none;
+  height: 35px;
+  margin-left: 10px;
+  width: 250px;
+  padding: 5px;
+  color: #555;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+/* styling button and added box shadow to look more 3d and then added pseudo classes like hover and active for transitions */
+button {
+  outline: none;
+  border: none;
+  width: 45%;
+  height: 50px;
+  background: linear-gradient(45deg, rgb(255, 0, 144), rgb(169, 48, 255));
+  color: #fff;
+  font-size: 18px;
+  font-family: monospace;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px #555;
+  transition: 0.5s;
+}
+button:hover {
+  box-shadow: none;
+}
+button:active {
+  box-shadow: none;
+}
+
+/* used :nth-child() to select second button to give margin to its left side */
+button:nth-child(2) {
+  margin-left: 10px;
+  background: linear-gradient(45deg, rgb(0, 123, 255), rgb(1, 255, 196));
+}
+
+.formElement:nth-child(5)::before {
+  content: "Example: gs://your-bucket/your-files/01.csv";
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  height: 10px;
+  width: 500px;
+  color: #fff;
+  font-family: monospace;
+  font-size: 16px;
+}
+
+.formElement:nth-child(6) input {
+  background-color: #ddd;
+}
+
+.formElement:nth-child(1) select {
+  text-align: center;
+}
+/* 
+added a small animation to the two big bubble to look more realistic */
+
+@keyframes animationUpDowm {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}

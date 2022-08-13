@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- added external css style sheet -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- background glassmorphism bubble -->
+    <div class="bubble"></div>
+
+    <!-- form div starts -->
+    <div class="form">
+      <!-- form tag starts -->
+      <form autocomplete="off">
+        <!-- Added select tag inside formelement div -->
+        <div class="formElement">
+          <label for="source">Select your source :</label>
+          <select name="source" id="source" class="inpdata" required>
+            <!-- by default this option is seleted -->
+            <option value="google cloud storage" selected>
+              Google Cloud Storage
+            </option>
+
+            <!-- other options -->
+
+            <option value="amazon web services">Amazon Web Services</option>
+
+            <option value="microsoft azure">Microsoft Azure</option>
+
+            <option value="ibm cloud">IBM Cloud</option>
+
+            <option value="alibaba cloud international">
+              Alibaba Cloud - international
+            </option>
+
+            <option value="oracle cloud infrastructure">
+              Oracle Cloud Infrastructure
+            </option>
+          </select>
+        </div>
+
+        <!-- used pattern attribute and added regex to validate input -->
+        <div class="formElement">
+          <label for="pipeline_name">Provide a name for pipeline :</label>
+          <input
+            class="inpdata"
+            type="text"
+            name="pipeline_name"
+            id="pipeline_name"
+            pattern="^[^+_-][a-zA-Z0-9]*$"
+            minlength="5"
+            placeholder="e.g., cust_shop_energy_gkateway001"
+            required
+          />
+        </div>
+
+        <div class="formElement">
+          <label for="gcs_project_name">GCS project name :</label>
+          <input
+            type="text"
+            class="inpdata"
+            name="gcs_project_name"
+            id="gcs_project_name"
+            pattern="^[^+_-][a-zA-Z0-9]*$"
+            minlength="5"
+            placeholder="project-id"
+            required
+          />
+        </div>
+
+        <div class="formElement">
+          <label for="gcs_bucket_name">GCS bucket name :</label>
+          <input
+            type="text"
+            class="inpdata"
+            name="gcs_bucket_name"
+            id="gcs_bucket_name"
+            pattern="^[^+_-][a-zA-Z0-9]*$"
+            minlength="5"
+            placeholder="gs://your-bucket"
+            required
+          />
+        </div>
+
+        <div class="formElement">
+          <label for="gcs_file_location">Input Cloud Storage File(s) :</label>
+          <input
+            type="text"
+            class="inpdata"
+            name="gcs_file_location"
+            id="gcs_file_location"
+            pattern="^[^+_-][a-zA-Z0-9]*$"
+            minlength="5"
+            placeholder="GCS location of your files"
+            required
+          />
+        </div>
+
+        <div class="formElement">
+          <label for="gcs_credentials">GCS credentials :</label>
+          <input
+            type="password"
+            class="inpdata"
+            name="gcs_credentials"
+            id="gcs_credentials"
+            pattern="^[^+_-][a-zA-Z0-9]*$"
+            minlength="5"
+            required
+          />
+        </div>
+
+        <div class="formElement">
+          <label for="run_every">Run Every :</label>
+          <input
+            type="text"
+            name="run_every"
+            id="run_every"
+            class="inpdata"
+            pattern="^[^+_-][0-9]*$"
+            minlength="5"
+            placeholder="(in minutes)"
+            required
+          />
+        </div>
+
+        <!-- created buttons for create and cancel -->
+        <div class="formElement">
+          <button type="submit">Create</button>
+          <button type="button">Cancel</button>
+        </div>
+      </form>
+      <!-- form tag ends -->
+    </div>
+    <!-- form div ends -->
+  </body>
+</html>
